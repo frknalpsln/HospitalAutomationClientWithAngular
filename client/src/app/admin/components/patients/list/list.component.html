@@ -1,0 +1,67 @@
+<p>lisst works!</p>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Ad </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="surname">
+        <th mat-header-cell *matHeaderCellDef> Soyad </th>
+        <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="fatherName">
+        <th mat-header-cell *matHeaderCellDef> Baba Adı </th>
+        <td mat-cell *matCellDef="let element"> {{element.fatherName}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="motherName">
+        <th mat-header-cell *matHeaderCellDef> Anne Adı </th>
+        <td mat-cell *matCellDef="let element"> {{element.motherName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="identificationNumber">
+        <th mat-header-cell *matHeaderCellDef> TC No </th>
+        <td mat-cell *matCellDef="let element"> {{element.identificationNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdDate">
+        <th mat-header-cell *matHeaderCellDef> Oluşturulma Tarihi </th>
+        <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="updatedDate">
+        <th mat-header-cell *matHeaderCellDef> Güncellenme Tarihi </th>
+        <td mat-cell *matCellDef="let element"> {{element.updatedDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef > </th>
+        <td mat-cell *matCellDef="let element" > <img src="../../../../../assets/update.png" /> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>   </th>
+        <td [id] ="element.id" mat-cell *matCellDef="let element" appDelete (callBack)="getPatients()" controller="patients"></td>
+      </ng-container>
+<!-- 
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>   </th>
+        <td mat-cell *matCellDef="let element"><img src="../../../../../assets/delete.png" (click)="delete(element.id , $event)"/></td>
+      </ng-container> -->
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator  (page)="pageChanged()"
+    class="paginator" [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>

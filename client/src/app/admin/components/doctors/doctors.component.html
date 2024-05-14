@@ -1,0 +1,6 @@
+<p>doktoor works!</p>
+<mat-drawer-container class="doctor-create">
+    <mat-drawer mode="side" opened><app-create (createdDoctor)="createdDoctor($event)" ></app-create></mat-drawer>
+    <mat-drawer-content><app-list></app-list></mat-drawer-content>
+  </mat-drawer-container>
+  

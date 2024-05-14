@@ -1,0 +1,26 @@
+<mat-form-field class="doctor-create">
+    <mat-label>Ad</mat-label>
+    <input matInput #txtName>
+  </mat-form-field> 
+
+  <mat-form-field class="doctor-create">
+    <mat-label>Soyad</mat-label>
+    <input matInput #txtSurname >
+  </mat-form-field>
+
+  <!-- <mat-form-field>
+    <mat-label>Doğum Tarihi</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> -->
+
+   
+  <mat-form-field class="doctor-create"> 
+    <mat-label>TC No</mat-label>
+    <input matInput type="number" min="11" max="11" #txtIdNumber>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class = "doctor-button" (click)="create(txtName , txtSurname ,  txtIdNumber)">Doktor Kayıt</button>
+  

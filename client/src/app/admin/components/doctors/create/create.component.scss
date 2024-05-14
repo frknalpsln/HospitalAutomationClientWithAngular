@@ -1,0 +1,12 @@
+.doctor-create {
+    margin: 5px 5px 5px;
+}
+.doctor-button {
+    margin: 5px 5px 5px;
+    left: 90px;
+}
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
